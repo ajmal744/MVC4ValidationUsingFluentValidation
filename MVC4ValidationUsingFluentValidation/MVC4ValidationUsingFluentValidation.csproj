@@ -198,7 +198,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\AccountModelValidators.cs" />
+    <Compile Include="Models\Validators\LocalPasswordModelValidator.cs" />
+    <Compile Include="Models\Validators\LoginModelValidator.cs" />
+    <Compile Include="Models\Validators\RegisterExternalLoginModelValidator.cs" />
+    <Compile Include="Models\Validators\RegisterModelValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
