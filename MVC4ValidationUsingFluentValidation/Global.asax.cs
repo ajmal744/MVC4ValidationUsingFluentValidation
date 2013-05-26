@@ -24,8 +24,7 @@ namespace MVC4ValidationUsingFluentValidation
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-
-            FluentValidationModelValidatorProvider.Configure();
+            AutofacConfig.RegisterComponents();
         }
     }
 }

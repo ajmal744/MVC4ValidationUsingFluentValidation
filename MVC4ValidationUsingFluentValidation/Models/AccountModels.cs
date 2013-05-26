@@ -29,7 +29,6 @@ namespace MVC4ValidationUsingFluentValidation.Models
         public string Name { get; set; }
     }
 
-    [FluentValidation.Attributes.Validator(typeof(RegisterExternalLoginModelValidator))]
     public class RegisterExternalLoginModel
     {
         [Display(Name = "User name")]
@@ -38,7 +37,6 @@ namespace MVC4ValidationUsingFluentValidation.Models
         public string ExternalLoginData { get; set; }
     }
 
-    [FluentValidation.Attributes.Validator(typeof(LocalPasswordModelValidator))]
     public class LocalPasswordModel
     {
         [DataType(DataType.Password)]
@@ -54,7 +52,6 @@ namespace MVC4ValidationUsingFluentValidation.Models
         public string ConfirmPassword { get; set; }
     }
 
-    [FluentValidation.Attributes.Validator(typeof(LoginModelValidator))]
     public class LoginModel
     {
         [Display(Name = "User name")]
@@ -68,7 +65,6 @@ namespace MVC4ValidationUsingFluentValidation.Models
         public bool RememberMe { get; set; }
     }
 
-    [FluentValidation.Attributes.Validator(typeof(RegisterModelValidator))]
     public class RegisterModel
     {
         [Display(Name = "User name")]
