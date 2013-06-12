@@ -9,6 +9,7 @@ using MVC4ValidationUsingFluentValidation.Models.Validators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
 using FluentValidation.TestHelper;
+using Moq;
 
 namespace MVC4ValidationUsingFluentValidation.Tests.Models.Validators
 {
@@ -16,11 +17,16 @@ namespace MVC4ValidationUsingFluentValidation.Tests.Models.Validators
     public class RegisterModelValidatorTests
     {
         private RegisterModelValidator validator;
+        private Mock<IUserProfileRepository> repository;
 
         [TestInitialize]
         public void SetUp()
         {
-            validator = new RegisterModelValidator();
+            repository = new Mock<IUserProfileRepository>();
+            repository.Setup(x => x.GetUserProfileByUserName("existing_username"))
+                      .Returns(new UserProfile());
+
+            validator = new RegisterModelValidator(repository.Object);
         }
 
         [TestMethod]
@@ -92,6 +98,12 @@ namespace MVC4ValidationUsingFluentValidation.Tests.Models.Validators
                     Password = "password1",
                     ConfirmPassword = "password2"
                 });
+        }
+
+        [TestMethod]
+        public void ShouldHaveValidationErrorWhenUserNameExists()
+        {
+            validator.ShouldHaveValidationErrorFor(x => x.UserName, "existing_username");
         }
     }
 }

@@ -15,6 +15,7 @@ namespace MVC4ValidationUsingFluentValidation
             builder.RegisterFilterProvider();
 
             // Register the modules
+            builder.RegisterModule<RepositoryModule>();
             builder.RegisterModule<ValidationModule>();
 
             // Create the container

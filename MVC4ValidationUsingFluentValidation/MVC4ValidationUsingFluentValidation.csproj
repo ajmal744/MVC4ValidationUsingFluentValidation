@@ -199,6 +199,7 @@
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\AutofacValidatorFactory.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ComponentRegistry\RepositoryModule.cs" />
     <Compile Include="App_Start\ComponentRegistry\ValidationModule.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -210,6 +211,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\UserProfileRepository.cs" />
     <Compile Include="Models\Validators\LocalPasswordModelValidator.cs" />
     <Compile Include="Models\Validators\LoginModelValidator.cs" />
     <Compile Include="Models\Validators\RegisterExternalLoginModelValidator.cs" />
